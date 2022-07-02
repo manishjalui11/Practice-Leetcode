@@ -10,11 +10,11 @@ class Solution:
 
     def commonIndex(self, shorter: List[int], longer: List[int]) -> List[int]:
         result = []
-        dic= {}
         s=set(shorter)
-        
+
         for ele in longer:
             if ele in shorter:
                 result.append(ele)
                 shorter.remove(ele)
+
         return result
