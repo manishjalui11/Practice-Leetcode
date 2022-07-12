@@ -9,9 +9,9 @@ class SmallestInfiniteSet:
         return self.s.pop(0)        
 
     def addBack(self, num: int) -> None:
-        if not num in self.s:
-            self.s.append(num)
-            self.s.sort()
+        index=bisect.bisect(self.s,num)
+        if (self.s[index-1]!=num):
+            self.s.insert(index,num)
 
 # Your SmallestInfiniteSet object will be instantiated and called as such:
 # obj = SmallestInfiniteSet()
